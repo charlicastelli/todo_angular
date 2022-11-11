@@ -1,0 +1,39 @@
+<ul class="animate__animated animate__flipInX" *ngIf="mode=='list'">
+    <p class="text-center" *ngIf="todos.length === 0">
+        <small>Você não possui Tarefas</small>
+    </p>
+    <li *ngFor="let todo of todos">
+        {{ todo.title }} 
+        <button (click)="remove( todo )">
+            <fa-icon [icon]="faTrashAlt"></fa-icon>
+        </button>
+        <button *ngIf="!todo.done" (click)="markAsDone(todo)"><fa-icon [icon]="faRoadCircleCheck"></fa-icon></button> 
+        <button *ngIf="todo.done" (click)="markAsUndone(todo)"><fa-icon [icon]="faCheckCircle"></fa-icon></button>
+        
+    </li>
+</ul>
+
+<div *ngIf="mode=='add'" class="modal animate__animated animate__flipInX">
+    <h1 class="text-center">Nova Tarefa</h1>
+    <form [formGroup]="form">
+        <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"><br>
+        <small class="danger" *ngIf="form.invalid && !form.pristine">{{ smaalText }}</small>
+        <p class="text-center">
+            <button class="button" [disabled]="form.invalid" (click)="add()">
+            <fa-icon [icon]="faSave"></fa-icon>    
+            {{ btnText }}</button>
+        </p>
+    </form>
+</div>
+
+<div class="btn">
+    <button class="btn add-button animate__animated animate__fadeInUp button" (click)="changeMode('add')" *ngIf="mode=='list'">
+        <fa-icon [icon]="faCircle"></fa-icon>
+        NOVA TAREFA
+    </button>
+    
+    <button class="btn add-button animate__animated animate__fadeInUp button" (click)="changeMode('list')" *ngIf="mode=='add'">
+        <fa-icon [icon]="faTimes"></fa-icon>
+        CANCELAR
+    </button>
+</div>
