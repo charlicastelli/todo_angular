@@ -1,6 +1,6 @@
 # Todo
 - Projeto desenvolvido em Angular para aprendizado curso YouTube.
-- "https://www.youtube.com/c/baltaio" `balta.io`.
+- https://www.youtube.com/c/baltaio `balta.io`.
 
 
 ##image
