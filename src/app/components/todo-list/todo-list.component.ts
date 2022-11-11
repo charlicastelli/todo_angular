@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { faPlusSquare } from '@fortawesome/free-regular-svg-icons';
 
-import { faTimes, faSave, faTrashAlt, faCheckCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTimes, faSave, faTrashAlt, faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
+import { BuiltinTypeName } from '@angular/compiler';
 
 
 @Component({
@@ -26,9 +27,9 @@ export class TodoListComponent implements OnInit {
   faSave = faSave;
   faTrashAlt = faTrashAlt;
   faCheckCircle = faCheckCircle;
-  faRoadCircleCheck = faCircle;
+  faExclamationCircle = faExclamationCircle;
   
-
+  addButton = document.querySelector(".button");
 
 
   constructor(private formBuilder: FormBuilder) { 
@@ -75,6 +76,7 @@ export class TodoListComponent implements OnInit {
 
   markAsUndone(todo: Todo) {
     todo.done = false;
+  
     this.save();
   }
 
@@ -97,4 +99,5 @@ export class TodoListComponent implements OnInit {
   changeMode(mode: string){
     this.mode = mode;
   }
+
 }

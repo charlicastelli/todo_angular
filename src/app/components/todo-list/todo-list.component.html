@@ -2,13 +2,13 @@
     <p class="text-center" *ngIf="todos.length === 0">
         <small>Você não possui Tarefas</small>
     </p>
-    <li *ngFor="let todo of todos">
+    <li class="list-todo" *ngFor="let todo of todos">
         {{ todo.title }} 
-        <button (click)="remove( todo )">
+        <button class="btn-remove" (click)="remove( todo )">
             <fa-icon [icon]="faTrashAlt"></fa-icon>
         </button>
-        <button *ngIf="!todo.done" (click)="markAsDone(todo)"><fa-icon [icon]="faRoadCircleCheck"></fa-icon></button> 
-        <button *ngIf="todo.done" (click)="markAsUndone(todo)"><fa-icon [icon]="faCheckCircle"></fa-icon></button>
+        <button class="btn-circle" *ngIf="!todo.done" (click)="markAsDone(todo)"><fa-icon [icon]="faExclamationCircle"></fa-icon></button> 
+        <button class="btn-check" *ngIf="todo.done" (click)="markAsUndone(todo)"><fa-icon [icon]="faCheckCircle"></fa-icon></button>
         
     </li>
 </ul>
@@ -16,7 +16,7 @@
 <div *ngIf="mode=='add'" class="modal animate__animated animate__flipInX">
     <h1 class="text-center">Nova Tarefa</h1>
     <form [formGroup]="form">
-        <input type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"><br>
+        <input class="inputField" type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"><br>
         <small class="danger" *ngIf="form.invalid && !form.pristine">{{ smaalText }}</small>
         <p class="text-center">
             <button class="button" [disabled]="form.invalid" (click)="add()">

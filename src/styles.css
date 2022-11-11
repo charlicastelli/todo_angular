@@ -23,6 +23,11 @@ ul {
     box-shadow: 3px 4px 14px 0px rgba(0, 0, 0, 0.39); 
 }
 
+.list-todo:hover {
+    transform:scale(1.1);
+    background: #F6F6F6;
+}
+
 li {
     padding: 15px;
     margin: 10px;
@@ -58,7 +63,7 @@ li>button:hover {
 }
 
 .button {
-    background-color: #000;
+    background: #000;
     border: none;
     padding: 20px;
     color: #fff;
@@ -69,19 +74,22 @@ li>button:hover {
 }
 
 .button:hover {
-    opacity: 1;
+    transform:scale(1.1);
     transition: opacity 1s;
-    color: #c86dd7;
-    background-color: rgb(54, 53, 53);
+    color: #4D80D4;
+    background-color: #311D3F;
 }
+
 
 .btn {
     padding-top: 20px;
 }
 
+.btn:hover {
+    transform:scale(1.1);
+}
+
 .modal {
-    /* display: flex;
-    flex-direction: column; */
     text-align: left;
     align-items: center;
     justify-content: center;
@@ -98,10 +106,11 @@ li>button:hover {
 }
 
 input {
-    width: 100%;
+    width: 98%;
     line-height: 50px;
     text-indent: 10px;
     font-size: 1.2em;
+    border-radius: 10px;
 }
 
 .danger {
@@ -112,12 +121,39 @@ input {
     font-weight: bold;
 }
 
+/* PERSONALIZAÇÃO ICONES DOS BOTÕES */
 button fa-icon,
 a fa-icon {
     margin-right: 0.2em;
+    font-size: 1.4em;
 }
 
-/* .btn path {
-    border-color: #0078ff;
-    color: #0078ff;
-} */
+.btn-remove path {
+    border-color: #E23E57;
+    color: #E23E57;
+}
+.btn-remove:hover path {
+    transform:scale(1.2);
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.btn-check path {
+    border-color: #1FAB89;
+    color: #1FAB89;
+}
+.btn-check:hover path {
+    transform:scale(1.2);
+    border-color: #05eb18dc;
+    color: #05eb18dc;
+}
+
+.btn-circle path {
+    border-color: #163172;
+    color: #163172;
+}
+.btn-circle:hover path {
+    transform:scale(1.2);
+    border-color: #6730EC;
+    color: #6730EC;
+}
