@@ -16,7 +16,7 @@
 <div *ngIf="mode=='add'" class="modal animate__animated animate__flipInX">
     <h1 class="text-center">Nova Tarefa</h1>
     <form [formGroup]="form">
-        <input class="inputField" type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title"><br>
+        <input class="inputField" type="text" placeholder="Título da Tarefa" maxlength="60" formControlName="title" required=""><br>
         <small class="danger" *ngIf="form.invalid && !form.pristine">{{ smaalText }}</small>
         <p class="text-center">
             <button class="button" [disabled]="form.invalid" (click)="add()">

@@ -121,6 +121,15 @@ input {
     font-weight: bold;
 }
 
+/* Campo de texto com borda verde ou vermelha */
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #00ca43;
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #dc3445;
+}
+
 /* PERSONALIZAÇÃO ICONES DOS BOTÕES */
 button fa-icon,
 a fa-icon {
